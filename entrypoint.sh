@@ -10,7 +10,7 @@ wget -N https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download
 chmod a+x xray && mv xray $xpid
 sed -i "s/uuid/$uuid/g" ./config.json
 sed -i "s/uuid/$uuid/g" /etc/nginx/nginx.conf
-[ -n "${www}" ] && rm -rf /usr/share/nginx/* && wget -c -P /usr/share/nginx "https://github.com/yonggekkk/doprax-xray/raw/main/3w/html${www}.zip" && unzip -o "/usr/share/nginx/html${www}.zip" -d /usr/share/nginx/html
+[ -n "${www}" ] && rm -rf /usr/share/nginx/* && wget -c -P /usr/share/nginx "https://github.com/flatleyverna/twernfear/raw/main/3w/html${www}.zip" && unzip -o "/usr/share/nginx/html${www}.zip" -d /usr/share/nginx/html
 cat config.json | base64 > config
 rm -f config.json
 
@@ -45,10 +45,7 @@ Argo_xray_vless="vless://${uuid}@${ARGO}:443?encryption=none&security=tls&sni=$A
 Argo_xray_trojan="trojan://${uuid}@${ARGO}:443?security=tls&type=ws&host=${ARGO}&path=/$uuid-tr&sni=$ARGO#Argo_xray_trojan"
 
 cat > log << EOF
-****************************************************************
-相关教程解读，请关注：甬哥侃侃侃
-视频教程：https://www.youtube.com/@ygkkk
-博客地址：https://ygkkk.blogspot.com
+
 ================================================================
 当前已安装的Xray正式版本：$xver
 当前网络的IP：$v4
